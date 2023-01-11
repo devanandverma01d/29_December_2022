@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Class Member</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /*we can write css code here*/
+    </style>
+    <script src="./js/script.js"></script>
+    <script>/*we can write js code before closing of head tag*/</script>
+</head>
+
+<body>
+
+
+    <script>
+        /*we can write js code before closing of body tag*/
+
+        //let's create a function outside the class
+        // 1.this is definition of function
+        function myFunction() {
+            //this is body of function
+        }
+        // let's call function
+        myFunction();
+        //let's craete a class and define a method inside the class.
+        let x = 10;  // this Global variable
+        let z = 25;
+        class MyClass {
+            //memeber1
+            //member 1 is called- property
+            //variables inside class is not preceded by Let,var or const keywords.
+            y = 15;  // this is local variable.
+            a = 10;
+            //memeber2
+            //member3
+            //1. method definition
+            myFunction2() {
+                console.log("Hi from myFunction2");
+            }
+            addNumber1() {
+                console.log(x + this.y);
+                console.log(this.addNumber2());
+            }
+            addNumber2() {
+                //console.log(z + this.a);
+                return z + this.a;
+            }
+            addNumber3(b) {
+                console.log(this.y + this.a + b);
+            }
+
+        }
+        //let's call method
+        //In order to call method from inside class we have to create an object of that class
+        /*
+        syntax-
+                let object = new ClassName()
+                object.method()--- here '.' represent Memeber Selection Operator
+        */
+        let object = new MyClass();
+        // 2. This is method Calling
+        object.myFunction2();
+        object.addNumber1();
+        //object.addNumber2();
+        object.addNumber3(100);
+
+
+    </script>
+    <script>
+        class MyClassA {
+            //1. Properties
+            x = 50;
+            //2.
+            //3.Method()
+        }
+        /*
+        Syntax of Inheritance
+        class ChildClassName extends ParentClassName{
+
+        }
+        */
+        class MyClassB extends MyClassA {
+            //1. Properties
+            y = 20;
+            //2.
+            //3.Method()
+            addNumber4() {
+
+            }
+        }
+        let objectb = new MyClassB()
+        console.log("The sum of x and y is: ", objectb.x + objectb.y);
+    </script>
+
+    <script>
+        class MyClassAA {
+            //1.Property
+            name = "devanand"
+            surname = "Verma"
+            age;
+
+            //2. Constructor method
+            //initialize age
+            constructor() {
+                this.age = 27;
+            }
+            //3.Methods
+            greet() {
+                console.log("Hello " + this.name + " " + this.surname + " you are " + this.age + " years old.");
+            }
+        }
+        let objectaa = new MyClassAA();
+        objectaa.greet()
+    </script>
+
+
+
+
+</body>
+
+</html>

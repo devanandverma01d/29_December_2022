@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Class Member</title>
+</head>
+
+<body>
+    <script>
+        class MyClassA {
+            //1.Property
+            x = 20;
+            z;
+            //2.Constructor
+            constructor(b) {
+                this.z = b;
+
+            }
+            //3.Method
+        }
+        class MyClassB extends MyClassA {
+            //1.Property
+            y = 25;
+            //2.Constructor
+            constructor(a) {
+                super(a);
+
+            }
+            //3.Method
+            showResult() {
+                console.log("The sum of x,y and z is: ", this.x + this.y + this.z);
+            }
+        }
+        let objectb = new MyClassB(30);
+        objectb.showResult();
+
+    </script>
+</body>
+
+</html>
